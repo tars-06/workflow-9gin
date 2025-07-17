@@ -130,13 +130,14 @@ namespace WorkflowEngine.Services
         }
 
         // Utility Operations
-        public async Task<List<Action>> GetAvailableActionsAsync(string instanceId)
+        // In the GetAvailableActionsAsync method, change:
+        public async Task<List<Models.Action>> GetAvailableActionsAsync(string instanceId)
         {
             var instance = await GetInstanceAsync(instanceId);
             var definition = await GetDefinitionAsync(instance.WorkflowDefinitionId);
 
             if (instance.IsCompleted)
-                return new List<Action>();
+                return new List<Models.Action>();
 
             return definition.Actions
                 .Where(a => a.Enabled && a.FromStates.Contains(instance.CurrentStateId))

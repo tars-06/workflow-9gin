@@ -44,7 +44,8 @@ namespace WorkflowEngine.Validation
             }
         }
 
-        private void ValidateActions(List<Action> actions, List<State> states)
+        // FIX: Use fully qualified name in parameter
+        private void ValidateActions(List<Models.Action> actions, List<State> states)
         {
             var stateIds = states.Select(s => s.Id).ToHashSet();
 

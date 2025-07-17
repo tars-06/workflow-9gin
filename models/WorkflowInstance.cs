@@ -1,3 +1,5 @@
+using WorkflowEngine.Models; // ADD this line if missing
+
 namespace WorkflowEngine.Models
 {
     public class WorkflowInstance

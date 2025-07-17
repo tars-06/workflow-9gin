@@ -19,7 +19,7 @@ namespace WorkflowEngine.Services
         Task<List<WorkflowInstance>> GetInstancesByDefinitionIdAsync(string definitionId);
 
         // Utility Operations
-        Task<List<Action>> GetAvailableActionsAsync(string instanceId);
+        Task<List<Models.Action>> GetAvailableActionsAsync(string instanceId);
         Task<State> GetCurrentStateAsync(string instanceId);
     }
 }
